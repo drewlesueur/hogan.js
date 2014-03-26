@@ -1,4 +1,37 @@
-## Hogan.js - A mustache compiler. [![Build Status](https://secure.travis-ci.org/twitter/hogan.js.png)](http://travis-ci.org/twitter/hogan.js)
+This fork adds helpers
+
+```
+var Hogan = require("hogan");
+var template = Hogan.compile("{{greet name}}!");
+var data = {name: "world"}
+var partials = {}
+var helpers = {
+  greet: function (name) { return "Hello, " + name }  
+}
+var output = template.render(data, partials, helpers);
+
+//prints "Hello, world!"
+console.log(output)
+```
+
+Helpers can be used anywhere
+
+```
+var Hogan = require("hogan");
+var template = Hogan.compile('{{#parseLatLng latLng}}{{.}} {{/parseLatLng}}');
+var data = {latLng: '33.4,-111.2'}
+var partials = {}
+var helpers = {
+  parseLatLng: function (latLng) { return latLng.split(',')}  
+}
+var output = template.render(data, partials, helpers);
+
+//prints "33.4 -111.2" 
+console.log(output)
+```
+
+
+## Hogan.js - A mustache compiler. [![Build Status](https://secure.travis-ci.org/drewlesueur/hogan.js.png)](http://travis-ci.org/drewlesueur/hogan.js)
 
 [Hogan.js](http://twitter.github.com/hogan.js/) is a compiler for the
 [Mustache](http://mustache.github.com/) templating language. For information
