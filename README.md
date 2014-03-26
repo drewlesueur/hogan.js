@@ -1,7 +1,8 @@
 This fork adds helpers
 
 ```
-var template = hogan.compile("{{greet name}}!");
+var Hogan = require("hogan");
+var template = Hogan.compile("{{greet name}}!");
 var data = {name: "world"}
 var partials = {}
 var helpers = {
@@ -16,7 +17,8 @@ console.log(output)
 Helpers can be used anywhere
 
 ```
-var template = hogan.compile('{{#parseLatLng latLng}}{{.}} {{/parseLatLng}}');
+var Hogan = require("hogan");
+var template = Hogan.compile('{{#parseLatLng latLng}}{{.}} {{/parseLatLng}}');
 var data = {latLng: '33.4,-111.2'}
 var partials = {}
 var helpers = {
