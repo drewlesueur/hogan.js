@@ -1,3 +1,30 @@
+This fork adds helpers
+
+```
+var template = hogan.compile("{{greet name}}!");
+var data = {name: "world"}
+var partials = {}
+var helpers = {
+  greet: function (name) { return "Hello, " + name }  
+}
+var output = template.render(data, partials, helpers);
+
+```
+
+Helpers can be used anywhere
+
+```
+var template = hogan.compile('{{#parseLatLng latLng}}{{.}}{{/parseLatLng}}');
+var data = {latLng: '33.4,-111.2'}
+var partials = {}
+var helpers = {
+  parseLatLng: function (latLng) { return latLng.split(',')}  
+}
+var output = template.render(data, partials, helpers);
+
+```
+
+
 ## Hogan.js - A mustache compiler. [![Build Status](https://secure.travis-ci.org/twitter/hogan.js.png)](http://travis-ci.org/twitter/hogan.js)
 
 [Hogan.js](http://twitter.github.com/hogan.js/) is a compiler for the

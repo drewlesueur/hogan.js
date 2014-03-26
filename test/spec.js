@@ -33,6 +33,13 @@ function runTest(tests) {
     for (var i in test.partials) {
       partials[i] = Hogan.compile(test.partials[i]);
     }
+
+    var helpers = {};
+    for (var i in test.helpers) {
+      var helperFunc = (new Function ('return ' + test.helpers[i].js)());
+      helpers[i] = helperFunc;
+    }
+
     var t = Hogan.compile(test.template);
 
     if (test.data.lambda) {
@@ -40,7 +47,7 @@ function runTest(tests) {
       test.data.lambda = function() { return func; };
     }
 
-    var s = t.render(test.data, partials);
+    var s = t.render(test.data, partials, helpers);
     is(s, test.expected, test.name + ': ' + test.desc);
   });
 }
