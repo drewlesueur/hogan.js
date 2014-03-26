@@ -31,7 +31,7 @@ console.log(output)
 ```
 
 
-## Hogan.js - A mustache compiler. [![Build Status](https://secure.travis-ci.org/twitter/hogan.js.png)](http://travis-ci.org/drewlesueur/hogan.js)
+## Hogan.js - A mustache compiler. [![Build Status](https://secure.travis-ci.org/drewlesueur/hogan.js.png)](http://travis-ci.org/drewlesueur/hogan.js)
 
 [Hogan.js](http://twitter.github.com/hogan.js/) is a compiler for the
 [Mustache](http://mustache.github.com/) templating language. For information
