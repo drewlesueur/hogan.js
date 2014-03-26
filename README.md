@@ -9,12 +9,14 @@ var helpers = {
 }
 var output = template.render(data, partials, helpers);
 
+//prints "Hello, world!"
+console.log(output)
 ```
 
 Helpers can be used anywhere
 
 ```
-var template = hogan.compile('{{#parseLatLng latLng}}{{.}}{{/parseLatLng}}');
+var template = hogan.compile('{{#parseLatLng latLng}}{{.}} {{/parseLatLng}}');
 var data = {latLng: '33.4,-111.2'}
 var partials = {}
 var helpers = {
@@ -22,6 +24,8 @@ var helpers = {
 }
 var output = template.render(data, partials, helpers);
 
+//prints "33.4 -111.2" 
+console.log(output)
 ```
 
 
